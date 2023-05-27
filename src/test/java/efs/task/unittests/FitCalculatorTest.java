@@ -84,5 +84,21 @@ class FitCalculatorTest {
         assertFalse(recommended);
     }
 
+    @Test
+    void findUserWithTheWorstBMI_WorstUser_Equal(){
+
+        User actualUser = FitCalculator.findUserWithTheWorstBMI(TestConstants.TEST_USERS_LIST);
+
+        assertTrue(actualUser.getHeight() == 1.79 && actualUser.getWeight() == 97.3);
+
+    }
+
+    @Test
+    void calculateBMIScore_BmiScore_Equal(){
+
+        double[] actualBmiScores = FitCalculator.calculateBMIScore(TestConstants.TEST_USERS_LIST);
+
+        assertArrayEquals(actualBmiScores, TestConstants.TEST_USERS_BMI_SCORE);
+    }
 
 }
